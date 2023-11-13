@@ -1,0 +1,94 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    color: white;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: black;
+}
+
+.container{
+    position: relative;
+}
+
+.clock{
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255,0.1);
+    border: 2px solid rgba(255, 255, 255, 0.25);
+    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.9);
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+}
+
+.clock span{
+    position: absolute;
+    transform: rotate(calc(30deg * var(--i)));
+    inset: 12px;
+    text-align: center;
+}
+
+.clock span b{
+    transform: rotate(calc(-30deg * var(--i)));
+    display: inline-block;
+    font-size: 20px;
+}
+
+.clock::before{
+    content: '';
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: white;
+    z-index: 2;
+}
+
+.hand{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.hand i{
+    position: absolute;
+    background-color: var(--clr);    
+    width: 4px;
+    height: var(--h);
+    border-radius: 8px;
+}
+
+
+/* ------------------------>
+
+(1) The * selector is used to reset the default margin, padding, and box-sizing for all elements and set a default font family and text color to white for all elements on the page.
+
+(2) The body selector styles the overall body of the page. It uses Flexbox to center the content both horizontally and vertically on the page and sets the background color to black.
+
+(3) The .container class is relatively positioned, which may be used to contain other elements within it.
+
+(4) The .clock class styles the clock face. It's a circular element with a white background, a border, and a box shadow for a 3D effect. It uses Flexbox to center its content (presumably the clock hands).
+
+(5) The .clock span selector is used to style the clock markings or numbers on the clock face. These markings are positioned absolutely, and their rotation is adjusted based on a custom property (var(--i)), presumably for each hour or minute mark.
+
+(6) The .clock span b selector styles the text within the clock markings. It's rotated in the opposite direction of the parent element (.clock span) to keep it upright.
+
+(7) The .clock::before selector is used to create a small white dot in the center of the clock face.
+
+(8) The .hand class is used to position the clock hands (hour and minute hands). It uses Flexbox to center the hands vertically and align them at the bottom of the clock face.
+
+(9) The .hand i selector styles the clock hands. They are positioned absolutely, and their width, height, background color, and border-radius are set. The var(--clr) custom property is used for the background color, which is presumably being set dynamically.
+
+(10) Without the corresponding HTML structure and the use of custom properties (e.g., var(--i) and var(--clr)), it's a bit challenging to fully understand the intended appearance and functionality of the clock. This CSS appears to be part of a larger HTML and CSS project, and it likely depends on other elements and JavaScript to fully function.
+
+*/
